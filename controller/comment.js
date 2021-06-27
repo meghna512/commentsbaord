@@ -4,7 +4,7 @@ const Comments = require('../models/comment');
 const createComment = async (req, res) => {
     let hasAccess = false;
     for (const r of res.locals.board.access) {
-        if (req.user.uid == r.uid && (r.accessType == "write" || r.accessType == "read")) {
+        if (req.user.uid == r.uid && (r.accessType == "write")) {
             hasAccess = true;
         }
     }
@@ -29,7 +29,7 @@ const createComment = async (req, res) => {
 }
 
 const updateComment = async (req, res) => {
-    if (res.locals.comment.user.uid == req.user.uid) {
+    if (res.locals.comment.user.uid == req.user.uid) { 
         res.locals.comment.text = req.body.text ? req.body.text : res.locals.comment.text;
     }else{
         return res.status(401).json({ message: "Access denied"})
@@ -60,7 +60,7 @@ const deleteComment = async (req, res) => {
 const getComment = async (req, res) => {
     let boardFilter = [];
     let commentFilter = [];
-    let userFilter = [];
+
     if (req.params.boardUid) {
         boardFilter = [{ "board.uid": { $eq: req.params.boardUid } }]
     }

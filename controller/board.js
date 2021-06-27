@@ -5,7 +5,7 @@ const createBoard = async (req, res) => {
     const newBoard = new Boards();
     newBoard.uid = shortid.generate();
     newBoard.boardname = req.body.boardname,
-        newBoard.access = req.body.access;
+    newBoard.access = req.body.access;
     newBoard.admin = req.user;
     try {
         await newBoard.save();
@@ -18,7 +18,7 @@ const createBoard = async (req, res) => {
 const updateBoard = async (req, res) => {
     let hasAccess = false;
     for (const r of res.locals.board.access) {
-        if(req.user.uid == r.uid && r.accessType=="write"){
+        if(req.user.uid == r.uid && r.accessType=="write"){ 
             hasAccess = true;
         }
     }

@@ -37,7 +37,7 @@ router.delete('/:boardUid/comment/:commentUid', checkBoard, checkComment, delete
  // fetch comments
 router.get('/:boardUid/comment', checkBoard, getComment);
 
-// fect comments by commentuid
+// fetch comments by commentuid
 router.get('/:boardUid/comment/:commentUid', checkBoard, getComment);
 
 
