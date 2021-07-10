@@ -1,12 +1,14 @@
 # Discussion Board
 
-This is a [NodeJS](https://nodejs.org/en/) based project wherein a discussion board is provided to the customers(similar to facebook) where user can add his/her comment to the feed.
-This project is implemented keeping in mind role based access control.
+A [Node JS](https://nodejs.org/en/) based app that provides a discussion board to its customers where he/she can add comments to the feed(similar to facebook, but much simpler). This app is built keeping in mind Role Based Access Control(RBAC) which restricts access to resources based on a user’s role i.e. only authorised users are allowed access to certain resources like create a comment on the board, edit and delete comment etc.
+
 
 ## Setup Locally
 
 1. Clone discussionboard project ```https://github.com/meghna512/discussionboard.git```
-2. Go to terminal inside discussionboard project and run ```node index.js``` command.
+2. ```npm install```
+3. Create ```.env``` similar to .env.example
+4. Go to terminal inside discussionboard project and run ```node index.js``` command.
 
 
 ## About Project

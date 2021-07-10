@@ -13,7 +13,6 @@ app.use(function (req, res, next) {
     req.query = queryString.parse(req._parsedUrl.query, { parseNumbers: true, parseBooleans: true });
     return next();
 });
-
 app.use('/',router);
 
 app.listen(process.env.PORT, () => {
